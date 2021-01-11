@@ -39,15 +39,14 @@ public class PalindromeService {
 	}
 
 	public List<Palindrome> getData() {
-		System.out.println(offSet + "offset");
-		System.out.println(limitValue + "limit");
 		String sql = "SELECT * FROM palindrome LIMIT ";
 		String limit = String.valueOf(this.limitValue + 5);
 		int resultCount = (int) repo.count();
 		String ORIGINAL_SQL = sql + String.valueOf(offSet) + "," + String.valueOf(limitValue);
 		List<Palindrome> result = jdbc.query(ORIGINAL_SQL, new BeanPropertyRowMapper(Palindrome.class));
+		System.out.println(result);
 		if (resultCount <= limitValue) {
-			return null;
+			return result;
 		} else {
 			if (result.size() <= 5) {
 				offSet = offSet + result.size();

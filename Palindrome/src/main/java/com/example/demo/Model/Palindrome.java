@@ -22,24 +22,23 @@ public class Palindrome {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
+	
 	@Column
 	private String palindrome;
+	
 
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
 	public String getPalindrome() {
 		return palindrome;
 	}
-
 	public void setPalindrome(String palindrome) {
 		this.palindrome = palindrome;
 	}
+	
 
 }
