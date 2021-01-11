@@ -1,0 +1,1 @@
+insert into palindrome (palindrome) values ("pop","mam","sas");
