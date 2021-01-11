@@ -44,7 +44,6 @@ public class PalindromeService {
 		int resultCount = (int) repo.count();
 		String ORIGINAL_SQL = sql + String.valueOf(offSet) + "," + String.valueOf(limitValue);
 		List<Palindrome> result = jdbc.query(ORIGINAL_SQL, new BeanPropertyRowMapper(Palindrome.class));
-		System.out.println(result);
 		if (resultCount <= limitValue) {
 			return result;
 		} else {
